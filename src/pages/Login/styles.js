@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 
 export const Container = styled.div`
-  max-height:1090px;
+  height:50%;
+  width:100%;
 
 
 `;
