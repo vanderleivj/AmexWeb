@@ -39,17 +39,16 @@ export default function Login() {
       <BackgroundSlider images={[imagem1, imagem2]} duration={10} transition={2} />
       <Grid container spacing={3}>
 
-        <Grid item xs={12} sm={3} md={6}>
-
         </Grid>
-        <Grid style={{marginTop:'5%'}} item xs={12} sm={6}>
-          <Container id="formStyle"  maxWidth="sm">
+        <Grid style={{marginTop:'150px',paddingRight:'6%'}} item xs={12} sm={12} md={12} container
+  direction="row"
+  justify="flex-end">
+          <ContainerAll id="formStyle"  maxWidth="sm" >
               <Typography id="formTittle" variant="h5">Acesso do Cliente</Typography>
               <Divider light />
               <Form />
-          </Container>
+          </ContainerAll>
 
-        </Grid>
 
       </Grid>
     </Grid>
