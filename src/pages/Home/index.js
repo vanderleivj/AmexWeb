@@ -37,7 +37,7 @@ export default function Login() {
         alignItems="center"
         style={{marginTop:20}}
       >
-          <Typography variant="h6">Para sua segurança, você precisa ter acesso a sua conta através do aplicativo para celular.</Typography>
+          <Typography  variant="h6">Para sua segurança, você precisa ter acesso a sua conta através do aplicativo para celular.</Typography>
           <Container  align='center' id="formStyle"  maxWidth="sm">
               <Typography id="formStyleHome" variant="h5">Validação de Segurança</Typography>
               <Divider style={{marginLeft:30,marginRight:30, marginTop:20, marginBottom:20}} light />
