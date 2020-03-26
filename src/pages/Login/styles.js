@@ -8,3 +8,8 @@ export const ContainerForm = styled.div`
 
 `;
 
+export const ContainerAll = styled.div`
+  height:100%;
+  width:100%;
+
+`;
