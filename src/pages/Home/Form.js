@@ -14,7 +14,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Typography from '@material-ui/core/Typography';
 
-import { Content, ContainerForm,ButtonForm } from '../../components/styles';
+import { AccessButton } from './styles';
 
 import { Link } from 'react-router-dom'
 
@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(3),
   },
   textField: {
-    width: '100%',
+    width: '60vh',
   },
 }));
 
@@ -61,21 +61,7 @@ export default function InputAdornments() {
     <div className={classes.root}>
       <div >
         <FormControl id="formLarge" className={clsx(classes.margin, classes.textField)} variant="outlined">
-          <Typography  id="spaceForm" variant="h7">CPF do Cliente</Typography>
-            <OutlinedInput
-              placeholder="000.000.000-00"
-              id="outlined-adornment-weight"
-              value={values.weight}
-              onChange={handleChange('weight')}
-              inputProps={{
-                'aria-label': 'weight',
-              }}
-              labelWidth={0}
-            />
-          </FormControl>
-
-        <FormControl id="formLarge" className={clsx(classes.margin, classes.textField)} variant="outlined">
-          <Typography id="spaceForm" variant="h7">Senha</Typography>
+          <Typography id="formHome" variant="h8">Digite o código gerado em seu celular</Typography>
             <OutlinedInput
               placeholder="********"
               id="outlined-adornment-password"
@@ -98,13 +84,11 @@ export default function InputAdornments() {
               labelWidth={0}
             />
           </FormControl>
-          <ButtonForm>
+          <AccessButton>
             <Link to="/home">
-            <button style={{color: '#fff'}} type = "submit" onClick="">Login do Cliente</button>
+            <button style={{color: '#fff'}} type = "submit" onClick="">Acessar</button>
             </Link>
-
-              <button style={{background: '#DEEAF6', color: '#828A92'}} type = "submit">Esqueceu a Senha</button>
-          </ButtonForm>
+          </AccessButton>
       </div>
     </div>
   );
