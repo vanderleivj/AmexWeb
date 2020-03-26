@@ -1,39 +1,58 @@
 import React from 'react';
 
-import { Content, ContainerForm,ButtonForm } from '../../components/styles';
-import { Container } from './styles';
-
+//local  import
+import {  } from '../../components/styles';
+import { ContainerAll } from './styles';
 import Header from '../../components/Header';
 
+//import from slider
 import BackgroundSlider from 'react-background-slider';
 
+//import image  from slider
 import imagem1 from '../../assets/imagem.jpg';
 import imagem2 from '../../assets/imagem2.jpg';
 
 
-export default function Login() {
-  return (
-    <>
-      <Container>
-          <Header/>
-          <Content>
-          <BackgroundSlider images={[imagem1, imagem2]} duration={10} transition={2} />
-            <ContainerForm>
-              <form>
-                <h1>Acesso do Cliente</h1>
-                <p>CPF do Cliente</p>
-                <input type = "number" placeholder = "000.000.000-00" />
-                <p>Senha</p>
-                <input type = "password" placeholder  = "*********" />
+//import from material
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import { ThemeProvider, createMuiTheme,MuiContainer } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
+import Divider from '@material-ui/core/Divider';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
 
-              </form>
-              <ButtonForm>
-                  <button style={{color: '#fff'}} type = "submit">Login do Cliente</button>
-                  <button style={{background: '#DEEAF6', color: '#828A92'}} type = "submit">Esqueceu a Senha</button>
-              </ButtonForm>
-            </ContainerForm>
-          </Content>
-      </Container>
-    </>
+import Paper from '@material-ui/core/Paper';
+import { Grid, Button } from '@material-ui/core';
+
+
+import Form from './Form'
+
+
+export default function Login() {
+
+  return (
+    <Grid component="main">
+      <CssBaseline />
+      <Header />
+      <BackgroundSlider images={[imagem1, imagem2]} duration={10} transition={2} />
+      <Grid container spacing={3}>
+
+        <Grid item xs={12} sm={3} md={6}>
+
+        </Grid>
+        <Grid style={{marginTop:'5%'}} item xs={12} sm={6}>
+          <Container id="formStyle"  maxWidth="sm">
+              <Typography id="formTittle" variant="h5">Acesso do Cliente</Typography>
+              <Divider light />
+              <Form />
+          </Container>
+
+        </Grid>
+
+      </Grid>
+    </Grid>
+
   );
 }

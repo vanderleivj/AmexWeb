@@ -33,13 +33,12 @@ export const Content = styled.div`
 
 `;
 
-export const Profile = styled.div`
+export const Profile = styled.button`
     display: flex;
-    margin-right: 100px;
 
     strong {
       display: block;
-      color: #000;
+      color: #FFF;
     }
 
     div {
@@ -48,7 +47,7 @@ export const Profile = styled.div`
 
       a {
       margin-right:30px;
-      margin-left:5px;
+      margin-left:50px;
       font-size: 16px;
       color: #Fff;
       font-weight:200;

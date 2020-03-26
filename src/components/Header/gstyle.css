@@ -1,0 +1,38 @@
+#colorHeader {
+  background-color: #006BB9;
+  height: 80px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+
+#tittleAncora {
+  color:#FFF;
+  padding-right: 30px;
+}
+
+#formStyle {
+  background-color: white;
+  height: 100%;
+  width: 60vh;
+  padding-top:30px;
+  padding-right:0;
+  padding-left: 0;
+  font-weight: bold;
+}
+
+#spaceForm {
+  padding-top:4%;
+  margin-bottom: 10px;
+}
+
+#formLarge{
+  padding-top:20px;
+  padding-right: 40px;
+  padding-left: 40px;
+
+}
+
+#formTittle{
+  padding-left: 40px;
+}

@@ -4,12 +4,17 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import InputBase from '@material-ui/core/InputBase';
+import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
-
-import { MdCreditCard, MdMonetizationOn } from 'react-icons/md'
-import logo from '../../assets/logo.svg'
+import SearchIcon from '@material-ui/icons/Search';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import MailIcon from '@material-ui/icons/Mail';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import MoreIcon from '@material-ui/icons/MoreVert';
 
 import './gstyle.css';
 
@@ -83,18 +88,27 @@ export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
+  const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+  const handleProfileMenuOpen = event => {
+    setAnchorEl(event.currentTarget);
+  };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
 
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
 
   const handleMobileMenuOpen = event => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const menuId = 'primary-search-account-menu';
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
@@ -106,19 +120,33 @@ export default function PrimarySearchAppBar() {
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
-
     >
       <MenuItem>
         <IconButton aria-label="show 4 new mails" color="inherit">
-          <MdMonetizationOn color="#000" size={20} />
+          <Badge badgeContent={4} color="secondary">
+            <MailIcon />
+          </Badge>
         </IconButton>
-        <p>Abra sua conta</p>
+        <p>Messages</p>
       </MenuItem>
       <MenuItem>
-        <IconButton >
-          <MdCreditCard color="#000" size={20} />
+        <IconButton aria-label="show 11 new notifications" color="inherit">
+          <Badge badgeContent={11} color="secondary">
+            <NotificationsIcon />
+          </Badge>
         </IconButton>
-        <p>Peça seu cartão</p>
+        <p>Notifications</p>
+      </MenuItem>
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
+        >
+          <AccountCircle />
+        </IconButton>
+        <p>Profile</p>
       </MenuItem>
     </Menu>
   );
@@ -127,7 +155,30 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar id="colorHeader">
-          <img style={{height:40}} src={logo} alt="Amex" />
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="open drawer"
+          >
+
+          </IconButton>
+          <Typography className={classes.title} variant="h6" noWrap>
+            Logo
+          </Typography>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
@@ -142,7 +193,7 @@ export default function PrimarySearchAppBar() {
               //onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <MdMonetizationOn />
+              <AccountCircle />
               <a style={{paddingLeft:10, fontSize:15}}>Abra sua conta</a>
             </IconButton>
 
@@ -155,7 +206,7 @@ export default function PrimarySearchAppBar() {
               color="inherit"
               style ={{paddingLeft:50}}
             >
-              <MdCreditCard />
+              <AccountCircle />
               <a style={{paddingLeft:10, fontSize:15}}>Peça seu cartão</a>
             </IconButton>
           </div>
