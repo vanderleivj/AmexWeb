@@ -33,7 +33,7 @@ import Form from './Form'
 export default function Login() {
 
   return (
-    <Grid component="main">
+    <Grid item xs={12} sm={12} md={12} component="main">
       <CssBaseline />
       <Header />
       <BackgroundSlider images={[imagem1, imagem2]} duration={10} transition={2} />
