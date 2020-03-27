@@ -14,6 +14,9 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Typography from '@material-ui/core/Typography';
 
+//Icones
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+
 import { Content, ContainerForm,ButtonForm } from '../../components/styles';
 
 import { Link } from 'react-router-dom'
@@ -99,11 +102,14 @@ export default function InputAdornments() {
             />
           </FormControl>
           <ButtonForm>
-            <Link to="/home">
-            <button style={{color: '#fff'}} type = "submit" onClick="">Login do Cliente</button>
-            </Link>
+            <Link to="/home" >
 
+              <button startIcon={<ArrowForwardIcon />} style={{color: '#fff'}} type = "submit" onClick="">Login do Cliente</button>
+
+            </Link>
+            <Link>
               <button style={{background: '#DEEAF6', color: '#828A92'}} type = "submit">Esqueceu a Senha</button>
+            </Link>
           </ButtonForm>
       </div>
     </div>

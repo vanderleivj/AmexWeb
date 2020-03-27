@@ -74,9 +74,10 @@ export const ButtonForm = styled.div`
     width: 100%;
     justify-content: center;
     align-items: center;
+    margin-top:10%;
 
     button {
-      height: 100px;
+      height: 70px;
       width:50%;
       background: #006BB9;
       border: 0;

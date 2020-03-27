@@ -14,15 +14,18 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Typography from '@material-ui/core/Typography';
 
-import { AccessButton } from './styles';
+//Icones
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+
+import { Content, ContainerForm,ButtonForm } from './styles';
 
 import { Link } from 'react-router-dom'
 
-import '../../components/Header/gstyle.css';
+import './styles.css';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: 'flex',
+
     flexWrap: 'wrap'
   },
   margin: {
@@ -33,7 +36,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(3),
   },
   textField: {
-    width: '60vh',
+    width: '100%',
   },
 }));
 
@@ -61,7 +64,7 @@ export default function InputAdornments() {
     <div className={classes.root}>
       <div >
         <FormControl id="formLarge" className={clsx(classes.margin, classes.textField)} variant="outlined">
-          <Typography id="formHome" variant="h8">Digite o código gerado em seu celular</Typography>
+          <Typography id="spaceForm" variant="h7">Digite o código gerado em seu celular</Typography>
             <OutlinedInput
               placeholder="********"
               id="outlined-adornment-password"
@@ -84,11 +87,11 @@ export default function InputAdornments() {
               labelWidth={0}
             />
           </FormControl>
-          <AccessButton>
-            <Link to="/home">
-            <button style={{color: '#fff'}} type = "submit" onClick="">Acessar</button>
+          <ButtonForm>
+            <Link to="/dashboard" >
+              <button style={{color: '#fff'}} type = "submit" onClick="">Acessar</button>
             </Link>
-          </AccessButton>
+          </ButtonForm>
       </div>
     </div>
   );
