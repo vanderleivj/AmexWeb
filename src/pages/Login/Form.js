@@ -55,6 +55,7 @@ const useStyles = makeStyles(theme => ({
       width:'100%',
       height:'80vh',
       alignContent:'center',
+      paddingLeft:'25px'
   },
 
 
@@ -77,6 +78,9 @@ const useStyles = makeStyles(theme => ({
   },
     [theme.breakpoints.down('lg')]: {
       height:'12vh'
+  },
+    [theme.breakpoints.down('md')]: {
+      height:'11vh'
   },
     [theme.breakpoints.down('sm')]: {
       marginTop:'10%'
