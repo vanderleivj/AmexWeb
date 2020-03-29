@@ -14,20 +14,20 @@
 #formStyle {
   background-color: white;
   height: 100%;
-  width: 400px;
+  max-width: 400px;
   padding-top:30px;
-  padding-right:0;
-  padding-left: 0;
   font-weight: bold;
+  box-shadow: 5px 5px 25px #0000000D;
+
 }
 
 #spaceForm {
-  padding-top:4%;
+  padding-top:1%;
   margin-bottom: 10px;
 }
 
 #formLarge{
-  padding-top:20px;
+  padding-top:10px;
   padding-right: 40px;
   padding-left: 40px;
 

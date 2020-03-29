@@ -2,49 +2,99 @@ import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
-import Input from '@material-ui/core/Input';
-import FilledInput from '@material-ui/core/FilledInput';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
-import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
-import TextField from '@material-ui/core/TextField';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 
-//Icones
+//icones
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import HttpsIcon from '@material-ui/icons/Https';
 
-import { Content, ContainerForm,ButtonForm } from '../../components/styles';
+import Divider from '@material-ui/core/Divider';
 
-import { Link } from 'react-router-dom'
-
-import '../../components/Header/gstyle.css';
+import './styles.css'
 
 const useStyles = makeStyles(theme => ({
+
   root: {
-    display: 'flex',
-    flexWrap: 'wrap'
+    [theme.breakpoints.down('xl')]: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      width:'450px',
+      height:'90vh',
+      alignContent:'center',
+  },
+    [theme.breakpoints.down('lg')]: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      width:'450px',
+      height:'100%',
+      alignContent:'center',
+  },
+    [theme.breakpoints.down('md')]: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      width:'400px',
+      height:'100%',
+      alignContent:'center',
+  },
+    [theme.breakpoints.down('sm')]: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      width:'350px',
+      height:'100%',
+      alignContent:'center',
+  },
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      width:'100%',
+      height:'100%',
+      alignContent:'center',
+  },
+
+
   },
   margin: {
-    marginBottom: theme.spacing(7),
+    [theme.breakpoints.down('sm')]: {
+        margin: theme.spacing(2),
+    },
+    margin: theme.spacing(3),
   },
   withoutLabel: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(3),
+    marginTop: theme.spacing(3),
   },
   textField: {
-    width: '100%',
+    width: '90%',
   },
+  button: {
+    [theme.breakpoints.down('sm')]: {
+      height:'10vh'
+  },
+    [theme.breakpoints.down('xl')]: {
+      marginTop:'15%'
+  },
+    margin: 0,
+    width:'50%',
+    height:'7.5vh',
+    marginTop:'15%',
+    borderRadius:0,
+    fontFamily: 'Roboto',
+    textTransform: 'none',
+
+  }
 }));
+
 
 export default function InputAdornments() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
+    amount: '',
     password: '',
-    weight: '',
     showPassword: false,
   });
 
@@ -61,57 +111,53 @@ export default function InputAdornments() {
   };
 
   return (
-    <div className={classes.root}>
-      <div >
-        <FormControl id="formLarge" className={clsx(classes.margin, classes.textField)} variant="outlined">
-          <Typography  id="spaceForm" variant="h7">CPF do Cliente</Typography>
-            <OutlinedInput
-              placeholder="000.000.000-00"
-              id="outlined-adornment-weight"
-              value={values.weight}
-              onChange={handleChange('weight')}
-              inputProps={{
-                'aria-label': 'weight',
-              }}
-              labelWidth={0}
-            />
-          </FormControl>
 
-        <FormControl id="formLarge" className={clsx(classes.margin, classes.textField)} variant="outlined">
-          <Typography id="spaceForm" variant="h7">Senha</Typography>
-            <OutlinedInput
-              placeholder="********"
-              id="outlined-adornment-password"
-              type={values.showPassword ? 'text' : 'password'}
-              value={values.password}
-              onChange={handleChange('password')}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {values.showPassword ? <Visibility /> : <VisibilityOff />}
-                  </IconButton>
-                </InputAdornment>
-              }
+    <div className={classes.root} >
+      <div style={{background:'#FFF'}}>
+        <p className={clsx(classes.margin, classes.textField)} style={{fontSize:'35px', paddingTop:'5%'}}>Acesso do Cliente</p>
+        <Divider className={clsx(classes.margin, classes.textField)} />
 
-              labelWidth={0}
-            />
-          </FormControl>
-          <ButtonForm>
-            <Link to="/home" >
+        <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
+          <p className="fontForm">CPF do Cliente</p>
+          <OutlinedInput
+            id="outlined-adornment-amount"
+            value={values.amount}
+            onChange={handleChange('amount')}
+            placeholder="000.000.000-00"
+          />
+        </FormControl>
 
-              <button startIcon={<ArrowForwardIcon />} style={{color: '#fff'}} type = "submit" onClick="">Login do Cliente</button>
+        <FormControl className={clsx(classes.margin, classes.textField,classes.direcao)} variant="outlined">
+          <p className="fontForm">Senha</p>
+          <OutlinedInput
+            placeholder="*********"
+            id="outlined-adornment-password"
+            type={values.showPassword ? 'text' : 'password'}
+            value={values.password}
+            onChange={handleChange('password')}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
+              </InputAdornment>
+            }
 
-            </Link>
-            <Link>
-              <button style={{background: '#DEEAF6', color: '#828A92'}} type = "submit">Esqueceu a Senha</button>
-            </Link>
-          </ButtonForm>
+          />
+        </FormControl>
+        <Button href='./home' variant="contained" color="primary" className={classes.button} style={{backgroundColor: '#006BB9'}} endIcon={<ArrowForwardIcon/>}>
+          Login do Cliente
+        </Button>
+        <Button variant="contained" className={classes.button} style={{backgroundColor: '#DEEAF6', color: '#828A92'}}  endIcon={<HttpsIcon/>}>
+          Esqueceu a Senha
+        </Button>
       </div>
+
     </div>
   );
 }

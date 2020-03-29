@@ -71,21 +71,18 @@ export const ContainerForm = styled.div`
 `;
 
 export const ButtonForm = styled.div`
-    width: 100%;
+    height:100;
+    width: 100;
     justify-content: center;
     align-items: center;
-    margin-top:10%;
 
     button {
       height: 70px;
       width:50%;
+      border:0;
       background: #006BB9;
-      border: 0;
       font-size: 16px;
       transition: background 0.3s;
-      @media screen and (max-width: 1024px){
-        height: 80px;
-      }
       &:hover {
         background: ${darken(0.10, '#006BB9')}
       }
