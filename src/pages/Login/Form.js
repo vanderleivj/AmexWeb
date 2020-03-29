@@ -46,14 +46,14 @@ const useStyles = makeStyles(theme => ({
       display: 'flex',
       flexWrap: 'wrap',
       width:'350px',
-      height:'100%',
+      height:'80vh',
       alignContent:'center',
   },
     [theme.breakpoints.down('xs')]: {
       display: 'flex',
       flexWrap: 'wrap',
       width:'100%',
-      height:'100%',
+      height:'80vh',
       alignContent:'center',
   },
 
@@ -63,7 +63,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
         margin: theme.spacing(2),
     },
-    margin: theme.spacing(3),
+    margin: theme.spacing(2),
   },
   withoutLabel: {
     marginTop: theme.spacing(3),
@@ -75,8 +75,11 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       height:'10vh'
   },
-    [theme.breakpoints.down('xl')]: {
-      marginTop:'15%'
+    [theme.breakpoints.down('lg')]: {
+      height:'12vh'
+  },
+    [theme.breakpoints.down('sm')]: {
+      marginTop:'10%'
   },
     margin: 0,
     width:'50%',
@@ -84,6 +87,7 @@ const useStyles = makeStyles(theme => ({
     marginTop:'15%',
     borderRadius:0,
     fontFamily: 'Roboto',
+    fontSize: '1.vh',
     textTransform: 'none',
 
   }
@@ -114,7 +118,7 @@ export default function InputAdornments() {
 
     <div className={classes.root} >
       <div style={{background:'#FFF'}}>
-        <p className={clsx(classes.margin, classes.textField)} style={{fontSize:'35px', paddingTop:'5%'}}>Acesso do Cliente</p>
+        <p className={clsx(classes.margin, classes.textField)} style={{fontSize:'3vh', paddingTop:'5%'}}>Acesso do Cliente</p>
         <Divider className={clsx(classes.margin, classes.textField)} />
 
         <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">

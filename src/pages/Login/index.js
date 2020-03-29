@@ -39,20 +39,20 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('lg')]: {
       display: 'flex',
       flexWrap: 'wrap',
-      height:'90vh',
+      height:'85vh',
       paddingLeft:'45%'
   },
 
     [theme.breakpoints.down('sm')]: {
       display: 'flex',
       flexWrap: 'wrap',
-      height:'90vh',
+      height:'80vh',
       paddingLeft:'0%'
   },
     [theme.breakpoints.down('xs')]: {
       display: 'flex',
       flexWrap: 'wrap',
-      height:'90vh',
+      height:'50vh',
       weight:'10vh'
 
   },
@@ -70,10 +70,8 @@ export default function Login() {
     <Grid >
       <BackgroundSlider  images={[imagem1, imagem2]} duration={10} transition={2}   />
       <Header/>
-        <Grid  className={classes.root} justify="center" container direction="row"  xl='auto' lg='auto' md='auto' sm='auto' xs='auto' >
-
+        <Grid  className={classes.root} justify="center" container direction="row"  xl='11' lg='11' md='11' sm='11' xs='11' >
               <Form/>
-
         </Grid>
 
 
