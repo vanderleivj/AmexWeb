@@ -5,6 +5,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 import Typography from '@material-ui/core/Typography';
 
@@ -52,12 +54,41 @@ const useStyles = makeStyles((theme) => ({
   appBarSpacer: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    height: '100vh',
+    height: '100%',
+    width:'100%',
     overflow: 'auto',
   },
   container: {
-    paddingTop: theme.spacing(2),
+    paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(2),
+    [theme.breakpoints.down('xl')]: {
+      marginBottom: '-8.8vh',
+    },
+    [theme.breakpoints.down('lg')]: {
+      marginBottom: '-14.1vh',
+    },
+    [theme.breakpoints.down('md')]: {
+
+      marginBottom: '20vh',
+    },
+    [theme.breakpoints.down('sm')]: {
+
+      marginBottom: '20vh',
+    },
+  },
+  zindex: {
+    [theme.breakpoints.down('xl')]: {
+      zIndex: 1,
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '20vh',
+      marginLeft:'1vh'
+    },
+    [theme.breakpoints.down('md')]: {
+      marginTop: '20vh',
+      marginBottom:'4vh',
+      marginLeft:'2vh'
+    },
   },
   paper: {
     padding: theme.spacing(2),
@@ -69,6 +100,24 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
 
   },
+  button: {
+    [theme.breakpoints.down('xl')]: {
+      height:'40vh',
+
+    },
+    [theme.breakpoints.down('lg')]: {
+      height:'33vh',
+
+    },
+    margin: 0,
+    height:'15vh',
+    borderRadius:0,
+    fontFamily: 'Roboto',
+    fontSize: '1.vh',
+    textTransform: 'none',
+    justifyContent: 'left',
+
+  },
 }));
 
 export default function Home() {
@@ -77,7 +126,7 @@ export default function Home() {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
-    <div>
+    <div >
       <Header />
       <CssBaseline />
       <main className={classes.content}>
@@ -121,7 +170,7 @@ export default function Home() {
                   Instalar agora
                 </Typography>
               </Grid>
-              <Grid style={{paddingLeft:35}} className={classes.root}>
+              <Grid style={{paddingLeft:35,paddingBottom:'4vh'}} className={classes.root}>
                 <Grid  container spacing={3}>
                   <Grid item xs={12} sm={6}>
                     <Link>
@@ -139,28 +188,21 @@ export default function Home() {
           </Grid>
 
             {/* Formulario */}
-
-            <ContainerAll style={{marginLeft:'5%'}} id="formStyle"  maxWidth="lg" >
-                <Typography id="formTittle" variant="h6">
-                  Validação de Segurança
-                </Typography>
-                <Divider style={{margin:10}} />
-                <Grid container direction="row" justify="center" alignItems="center">
-                  <p style={{color:'#77B5F4'}}>O que devo fazer?</p>
-                </Grid>
-                <Grid container direction="row" justify="center" alignItems="center">
-                  <img style={{height:200}} src={qrcode} alt="qrcode" />
-                </Grid>
-              <Form />
-          </ContainerAll>
+            <Grid item xs={12} md={6} lg={6} sm={10} className={classes.zindex}  >
+              <Form  />
+            </Grid>
 
         </Grid>
 
         </Container>
 
-        <Grid style={{background:'#000'}} >
-            <Link></Link>
-          </Grid>
+        <Button href='./home' variant="contained" color="primary" className={classes.button} style={{backgroundColor: '#006BB9',width:'38%'}} endIcon={<ArrowForwardIcon/>}>
+          Login do Cliente
+        </Button>
+        <Button href='./home' variant="contained" color="primary" className={classes.button} style={{backgroundColor: '#177DDD',width:'62%'}} endIcon={<ArrowForwardIcon/>}>
+          Login do Cliente
+        </Button>
+
       </main>
     </div>
   );

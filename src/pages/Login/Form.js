@@ -120,9 +120,9 @@ export default function InputAdornments() {
 
   return (
 
-    <div className={classes.root} >
-      <div style={{background:'#FFF'}}>
-        <p className={clsx(classes.margin, classes.textField)} style={{fontSize:'3vh', paddingTop:'5%'}}>Acesso do Cliente</p>
+    <div  className={classes.root} >
+      <div id='container'>
+        <p className={clsx(classes.margin, classes.textField)} style={{fontSize:'24px', paddingTop:'5%'}}>Acesso do Cliente</p>
         <Divider className={clsx(classes.margin, classes.textField)} />
 
         <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
